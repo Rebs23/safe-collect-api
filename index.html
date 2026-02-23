@@ -1,9 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Safe-Collect | Autonomous Agentic Payments</title>
+    <title>Safe-Collect | Pasarela de Pagos para Agentes de IA | Software Dark Factory</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Safe-Collect: La infraestructura de pagos de alta seguridad para la economía de agentes de IA. Optimizada para el despliegue autónomo y transacciones agentic.">
+    <meta name="keywords" content="Safe-Collect, AI Payments, Agentic Economy, Software Dark Factory, Stripe IA, Sonora Node, Pagos Inteligentes">
+    <meta name="author" content="Software Dark Factory">
+    <meta name="robots" content="index, follow">
+
+    <!-- OpenGraph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://safe-collect-web.vercel.app/">
+    <meta property="og:title" content="Safe-Collect | El Futuro de los Pagos Agentic">
+    <meta property="og:description" content="Backbone financiero para agentes de IA autónomos. Seguridad y velocidad Sonora-Main-01.">
+    <meta property="og:image" content="https://safe-collect-web.vercel.app/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Safe-Collect | AI Agent Payments">
+    <meta property="twitter:description" content="Impulsando la economía agentic con infraestructura segura.">
+
+    <meta name="google-site-verification" content="ScxSTTAJkhF-M5L1QF4lHRdmfyk3yWpIld7B9iMm4lI" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
@@ -51,14 +71,36 @@
     <!-- Pricing Section -->
     <section id="pricing" class="container mx-auto px-6 py-20 text-center relative z-10">
         <div class="max-w-3xl mx-auto glass p-16 rounded-[4rem] border-indigo-500/20">
-            <h2 class="text-4xl font-bold mb-4">Pricing Model</h2>
-            <div class="text-6xl font-bold mb-8">$50 <span class="text-xl text-gray-500 font-normal">/ Mission</span></div>
-            <!-- BOTÓN 3 (Este era el que no funcionaba) -->
+            <h2 class="text-4xl font-bold mb-4">Token Economy</h2>
+            <p class="text-gray-500 mb-8">Fuel your agentic network with Amazing Credits.</p>
+            <div class="text-6xl font-bold mb-8">$50 <span class="text-xl text-gray-500 font-normal">/ 1,000,000 Tokens</span></div>
+            
             <a href="https://buy.stripe.com/6oU3cwd79cTqetQ6w80ZW00" class="inline-block bg-indigo-600 hover:bg-indigo-500 text-white px-12 py-5 rounded-2xl font-bold text-xl neon-glow transition w-full">
-                Connect Stripe
+                Buy Token Pack
             </a>
+
+            <!-- GOOGLE IDENTITY (Trust Factor) -->
+            <div class="mt-6 flex justify-center">
+                <div id="g_id_onload"
+                     data-client_id="593948232012-vo9i00a83sadihcif2uigqpnmouroaof.apps.googleusercontent.com"
+                     data-context="signin"
+                     data-ux_mode="popup"
+                     data-auto_prompt="false">
+                </div>
+                <div class="g_id_signin"
+                     data-type="standard"
+                     data-shape="pill"
+                     data-theme="filled_blue"
+                     data-text="continue_with"
+                     data-size="large"
+                     data-logo_alignment="left">
+                </div>
+            </div>
         </div>
     </section>
+
+    <!-- Google Script -->
+    <script src="https://accounts.google.com/gsi/client" async></script>
 
     <!-- Support Section -->
     <section id="contact" class="container mx-auto px-6 py-20 glass rounded-[3rem] mt-10 relative z-10">
@@ -85,31 +127,36 @@
     </footer>
 
     <!-- HIDDEN ADMIN DASHBOARD (Comandante Only) -->
-    <div id="admin-dashboard" class="hidden p-20 bg-slate-900 border-t-2 border-indigo-500/30">
+    <div id="admin-dashboard" class="hidden p-6 md:p-20 bg-slate-900 border-t-2 border-indigo-500/30">
         <div class="container mx-auto">
-            <div class="flex justify-between items-center mb-8">
-                <h2 class="text-3xl font-bold text-white tracking-tighter uppercase">SDF Revenue Intelligence</h2>
-                <div class="flex items-center space-x-2">
-                    <span class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
-                    <span class="text-xs text-green-500 font-mono uppercase tracking-widest">Live Terminal</span>
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 space-y-4 md:space-y-0">
+                <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tighter uppercase">SDF Revenue Intelligence</h2>
+                <div class="flex items-center space-x-2 bg-black/40 px-4 py-2 rounded-full border border-green-500/20">
+                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                    <span class="text-[10px] md:text-xs text-green-500 font-mono uppercase tracking-widest">Live Node Sonora</span>
                 </div>
             </div>
-            <div class="grid md:grid-cols-3 gap-8 mb-12">
-                <div class="glass p-8 rounded-2xl">
-                    <div class="text-xs text-gray-500 uppercase tracking-widest mb-2">Real-Time Revenue (USD)</div>
-                    <div id="revenue-total" class="text-4xl font-bold text-white">$0.00</div>
+            
+            <!-- Grid adaptativo: 1 columna en móvil, 3 en PC -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-12">
+                <div class="glass p-6 md:p-8 rounded-3xl border-white/5">
+                    <div class="text-[10px] text-gray-500 uppercase tracking-widest mb-2">Real-Time Revenue (USD)</div>
+                    <div id="revenue-total" class="text-3xl md:text-4xl font-bold text-white tracking-tight">$0.00</div>
                 </div>
-                <div class="glass p-8 rounded-2xl">
-                    <div class="text-xs text-gray-500 uppercase tracking-widest mb-2">Agentic Missions</div>
-                    <div id="mission-count" class="text-4xl font-bold text-blue-400">0</div>
+                <div class="glass p-6 md:p-8 rounded-3xl border-white/5">
+                    <div class="text-[10px] text-gray-500 uppercase tracking-widest mb-2">Agentic Missions</div>
+                    <div id="mission-count" class="text-3xl md:text-4xl font-bold text-blue-400 tracking-tight">0</div>
                 </div>
-                <div class="glass p-8 rounded-2xl">
-                    <div class="text-xs text-gray-500 uppercase tracking-widest mb-2">Net Sonora (MXN)</div>
-                    <div id="net-mxn" class="text-4xl font-bold text-indigo-400">$0.00</div>
+                <div class="glass p-6 md:p-8 rounded-3xl border-white/5">
+                    <div class="text-[10px] text-gray-500 uppercase tracking-widest mb-2">Net Sonora (MXN)</div>
+                    <div id="net-mxn" class="text-3xl md:text-4xl font-bold text-indigo-400 tracking-tight">$0.00</div>
                 </div>
             </div>
-            <div class="text-xs font-mono text-gray-600 uppercase tracking-widest">
-                Mission Log: <span id="status-text">Awaiting first global transaction via api.safe-collect-1.onrender.com...</span>
+            
+            <div class="bg-black/20 p-4 rounded-xl border border-white/5">
+                <div class="text-[10px] font-mono text-gray-600 uppercase tracking-[0.2em] leading-relaxed">
+                    <span class="text-blue-500/50">Log:</span> <span id="status-text">Syncing with global payment network...</span>
+                </div>
             </div>
         </div>
     </div>

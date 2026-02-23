@@ -19,6 +19,10 @@ class ChargeRequest(BaseModel):
     amount: int
     token_cost: int = 100
 
+class CheckoutRequest(BaseModel):
+    amount: int
+    currency: str = "usd"
+
 async def verify_sdf_key(credentials: HTTPAuthorizationCredentials = Depends(security)):
     if credentials.credentials != os.getenv("SDF_MASTER_KEY"):
         raise HTTPException(status_code=401, detail="Invalid SDF Key")
@@ -64,14 +68,16 @@ async def get_earnings():
     }
 
 @app.post("/v1/fiat/checkout")
-async def fiat_checkout():
-    return {
-        "id": "pi_mock_555",
-        "client_secret": "pi_mock_555_secret_777",
-        "status": "requires_payment_method",
-        "amount": 5000,
-        "currency": "usd"
-    }
+async def fiat_checkout(req: CheckoutRequest):
+    try:
+        intent = stripe.PaymentIntent.create(
+            amount=req.amount,
+            currency=req.currency,
+            automatic_payment_methods={"enabled": True},
+        )
+        return {"client_secret": intent.client_secret}
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e))
 
 @app.get("/")
 def home():

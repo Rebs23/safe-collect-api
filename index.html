@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe-Collect | Autonomous Agentic Payments</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Space Grotesk', sans-serif; scroll-behavior: smooth; }
+        .space-bg { background: radial-gradient(circle at top right, #1e1b4b, #020617, #000); }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .neon-glow { box-shadow: 0 0 20px rgba(99, 102, 241, 0.4); }
+        .text-gradient { background: linear-gradient(to r, #60a5fa, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="space-bg text-white min-h-screen overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="container mx-auto px-6 py-8 flex justify-between items-center relative z-10">
+        <div class="text-2xl font-bold tracking-tighter text-gradient">SAFE-COLLECT</div>
+        <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest text-gray-400 font-bold">
+            <a href="#features" class="hover:text-blue-400 transition">Tech</a>
+            <a href="#pricing" class="hover:text-blue-400 transition">Pricing</a>
+            <a href="#contact" class="hover:text-blue-400 transition">Support</a>
+        </div>
+        <!-- BOTÓN 1 -->
+        <a href="https://buy.stripe.com/6oU3cwd79cTqetQ6w80ZW00" class="glass px-6 py-2 rounded-full text-sm font-bold hover:neon-glow transition">Launch Node</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="container mx-auto px-6 pt-24 pb-20 text-center relative z-10">
+        <div class="inline-block glass px-4 py-1 rounded-full text-xs font-mono text-blue-400 mb-6 border-blue-500/30">
+            STRIPE LIVE | SDF ENGINE v1.1
+        </div>
+        <h1 class="text-6xl md:text-8xl font-bold tracking-tight mb-8 leading-tight">
+            The Backbone of <br> <span class="text-gradient">AI Economy</span>
+        </h1>
+        <p class="text-xl text-gray-400 max-w-3xl mx-auto mb-12">
+            Safe-Collect is a high-performance payment infrastructure built for autonomous AI Agents. 
+            Optimized by the Software Dark Factory via Sidecar x SHARE.
+        </p>
+        <div class="flex justify-center">
+            <!-- BOTÓN 2 -->
+            <a href="https://buy.stripe.com/6oU3cwd79cTqetQ6w80ZW00" class="bg-blue-600 hover:bg-blue-500 text-white px-12 py-5 rounded-2xl font-bold text-xl neon-glow transition shadow-xl">
+                Start Mission
+            </a>
+        </div>
+    </header>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="container mx-auto px-6 py-20 text-center relative z-10">
+        <div class="max-w-3xl mx-auto glass p-16 rounded-[4rem] border-indigo-500/20">
+            <h2 class="text-4xl font-bold mb-4">Pricing Model</h2>
+            <div class="text-6xl font-bold mb-8">$50 <span class="text-xl text-gray-500 font-normal">/ Mission</span></div>
+            <!-- BOTÓN 3 (Este era el que no funcionaba) -->
+            <a href="https://buy.stripe.com/6oU3cwd79cTqetQ6w80ZW00" class="inline-block bg-indigo-600 hover:bg-indigo-500 text-white px-12 py-5 rounded-2xl font-bold text-xl neon-glow transition w-full">
+                Connect Stripe
+            </a>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section id="contact" class="container mx-auto px-6 py-20 glass rounded-[3rem] mt-10 relative z-10">
+        <div class="grid md:grid-cols-3 gap-12 text-sm">
+            <div>
+                <h4 class="font-bold text-blue-400 uppercase tracking-widest mb-4">Support</h4>
+                <p class="text-gray-400">support@safe-collect.io</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-purple-400 uppercase tracking-widest mb-4">Legal</h4>
+                <a href="privacy.html" class="block text-gray-400 hover:text-white">Privacy Policy</a>
+                <a href="terms.html" class="block text-gray-400 hover:text-white">Terms of Service</a>
+            </div>
+            <div>
+                <h4 class="font-bold text-indigo-400 uppercase tracking-widest mb-4">Refunds</h4>
+                <p class="text-gray-400">30-day money back guarantee.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Legal (Mandatory for Stripe) -->
+    <footer class="py-10 text-center text-gray-700 text-xs">
+        Safe-Collect Global Network © 2026 | Built by Software Dark Factory.
+    </footer>
+
+    <!-- HIDDEN ADMIN DASHBOARD (Comandante Only) -->
+    <div id="admin-dashboard" class="hidden p-20 bg-slate-900 border-t-2 border-indigo-500/30">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-white mb-8 tracking-tighter uppercase">SDF Revenue Intelligence</h2>
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="glass p-8 rounded-2xl">
+                    <div class="text-xs text-gray-500 uppercase tracking-widest mb-2">Total MXN (Sonora)</div>
+                    <div class="text-4xl font-bold text-green-400">$12,500.00</div>
+                </div>
+                <div class="glass p-8 rounded-2xl">
+                    <div class="text-xs text-gray-500 uppercase tracking-widest mb-2">Commission Net (5%)</div>
+                    <div class="text-4xl font-bold text-blue-400">$625.00</div>
+                </div>
+                <div class="glass p-8 rounded-2xl">
+                    <div class="text-xs text-gray-500 uppercase tracking-widest mb-2">System Health</div>
+                    <div class="text-4xl font-bold text-indigo-400">AMAZING</div>
+                </div>
+            </div>
+            <div class="text-xs font-mono text-gray-600">MISSION LOG: All nodes operational. SHARE architecture stable at 45ms latency.</div>
+        </div>
+    </div>
+
+    <script>
+        // La llave secreta de la SDF
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('access') === 'amazing') {
+            document.getElementById('admin-dashboard').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>

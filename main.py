@@ -6,6 +6,9 @@ from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from pydantic import BaseModel
 from dotenv import load_dotenv
 
+# LEER LA LLAVE DESDE EL SISTEMA, NO ESCRIBIRLA AQUÍ
+stripe.api_key = os.getenv("STRIPE_SECRET_KEY")
+
 load_dotenv()
 stripe.api_key = os.getenv("STRIPE_SECRET_KEY")
 app = FastAPI(title="SDF Token Engine")

@@ -57,3 +57,21 @@ async def stripe_webhook(request: Request, sig_header: str = Header(None)):
 @app.get("/")
 def home():
     return {"factory": "Software Dark Factory", "mode": "Production"}
+
+@app.get("/admin/earnings")
+def get_earnings():
+    try:
+        # La SDF consulta el balance real en la red de Stripe
+        balance = stripe.Balance.retrieve()
+        # Sumamos el dinero disponible y el dinero en camino (pending)
+        available = balance['available'][0]['amount'] / 100
+        pending = balance['pending'][0]['amount'] / 100
+        total = available + pending
+        
+        return {
+            "total_usd": total,
+            "mission_count": "Live from Stripe",
+            "net_sonora": total * 18.5 # Conversión estimada a MXN
+        }
+    except Exception as e:
+        return {"error": str(e)}
